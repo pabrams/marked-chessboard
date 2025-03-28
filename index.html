@@ -5,9 +5,9 @@
     <title>Chessboard with Square Control</title>
     <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0"/>
     <link rel="stylesheet" href="./markers.css"/>
-    <link rel="stylesheet" href="./chessboard.css"/>
+    <link rel="stylesheet" href="./cm-chessboard/chessboard.css"/>
     <link rel="stylesheet" href="./styles.css"/>
-    <link rel="stylesheet" href="./promotion-dialog.css"/>
+    <link rel="stylesheet" href="./cm-chessboard/promotion-dialog.css"/>
 
     <meta name="description" content="A chessboard that shows square control visually.">
     <meta name="keywords" content="chessboard, chess, square control, visualization, visualize, FEN, Forsyth-Edwards Notation, open source, JavaScript">
@@ -37,7 +37,7 @@
                     Blue frames denote Black control
                 </li>
                 <li>
-                    Red frames denote White control
+                    Green frames denote White control
                 </li>
                 <li>
                     The higher the control, the more opaque the frame will appear.
@@ -99,12 +99,12 @@
 <div id="output"></div>
 <div style="clear: both"></div>
 <script type="module">
-    import {INPUT_EVENT_TYPE, COLOR, Chessboard, BORDER_TYPE} from "./Chessboard.js"
-    import {Accessibility} from "./Accessibility.js"
-    import {PROMOTION_DIALOG_RESULT_TYPE, PromotionDialog} from "./PromotionDialog.js"
-    import {FEN} from "./Position.js"
-    import {MARKER_TYPE, Markers} from "./Markers.js"
-    import {Chess, SQUARES} from "./chess.js"
+    import {INPUT_EVENT_TYPE, COLOR, Chessboard, BORDER_TYPE} from "./cm-chessboard/Chessboard.js"
+    import {Accessibility} from "./cm-chessboard/Accessibility.js"
+    import {PROMOTION_DIALOG_RESULT_TYPE, PromotionDialog} from "./cm-chessboard/PromotionDialog.js"
+    import {FEN} from "./cm-chessboard/Position.js"
+    import {MARKER_TYPE, Markers} from "./cm-chessboard/Markers.js"
+    import {Chess, SQUARES} from "./chessjs/chess.js"
     const svgNamespace = "http://www.w3.org/2000/svg";
 
     let chess = new Chess(document.getElementById("txtFEN").value );
@@ -232,7 +232,7 @@
 
     const board = new Chessboard(document.getElementById("board"), {
         position: chess.fen(),
-        assetsUrl: "./assets/",
+        assetsUrl: "./cm-chessboard/assets/",
         responsive: true,
         style: {
             cssClass: "black-and-white",
