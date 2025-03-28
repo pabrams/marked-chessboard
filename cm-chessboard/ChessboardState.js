@@ -3,7 +3,7 @@
  * Repository: https://github.com/shaack/cm-chessboard
  * License: MIT, see file 'LICENSE'
  */
-import {Position} from "cm-chessboard/src/model/Position.js"
+import {Position} from "./model/Position.js"
 
 export class ChessboardState {
 
